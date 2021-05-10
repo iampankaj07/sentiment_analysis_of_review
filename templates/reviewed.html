@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+{%block title%} Sentiment Anlaysis {%endblock%}
+{%block body%}
+    <div class="jumbotron p-3">
+        <div class="well text-center">
+            <h3 > Sentiment Analysis  <br> Book Reviews</h3>
+        </div>
+    </div>
+     
+ <!-- <div style="height: 100px;">
+</div> -->
+<form method='POST' action="{{ url_for('analyse') }}">
+
+<div class="container">
+    <div class="row flex justify-content-center">
+        <div class="col-md-12 jumbotron p-3">
+         
+<div class="col-md-6" id="review">
+    <h4>Text being Reviewed</h4>
+    {% if review %}
+    <div class="card bg-light mycard">
+        <div class="card-body">
+           <h5>{{ review }}</h5>
+        </div>
+    </div>
+    {% endif %}
+</div>
+         </div>
+    </div>
+</div>
+</form>
+
+{%endblock%}
