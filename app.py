@@ -71,9 +71,9 @@ def analyse():
     testingwords_vectors = vectorizer.transform([details])
     output =loaded_model.predict(testingwords_vectors)
     if output == '__label__2' :
-       data = 'positive'
+       data = 'Positive'
     if output == '__label__1' :
-        data = 'negative'
+        data = 'Negative'
     #return review
     # cur = mysql.connection.cursor()
     # cur.execute(
@@ -82,7 +82,7 @@ def analyse():
     # cur.close()
     # return 'success'
 #  REPACE BEOW DETAIL BY OUTPUT DATA
-    return render_template('reviewed.html', review=data)
+    return render_template('reviewed.html', result=data,review=request.form['review'])
 
 
 if __name__ == "__main__":
