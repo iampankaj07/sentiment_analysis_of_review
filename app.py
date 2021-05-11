@@ -18,9 +18,9 @@ from sklearn.metrics import confusion_matrix
 import pickle
 import os.path
 import stopword    
-filename = 'finalized_model.h5'
+filename = 'finalized_model2.model'
 loaded_model = pickle.load(open(filename, 'rb'))
-vectorizer = pickle.load(open('vectorizer.pickle', 'rb'))
+vectorizer = pickle.load(open('vectorizer2.pickle', 'rb'))
 
 
 #  if not rum
@@ -30,6 +30,7 @@ vectorizer = pickle.load(open('vectorizer.pickle', 'rb'))
 # flask run
 #  for debug mode on
 # export:FLASK_ENV="development"
+#set FLASK_ENV=development
 def RegExpTokenizer(Sent):
     tokenizer = RegexpTokenizer(r'\w+')
     return tokenizer.tokenize(Sent)
